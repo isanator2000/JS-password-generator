@@ -1,4 +1,4 @@
-// Let's put our variables here on top
+// Let's put our variables here on top in global scope
 var choices = [];
 var characterLength = 8;
 
@@ -15,16 +15,27 @@ generateBtn.addEventListener("click", writePassword);
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  // if you input a valid number when the how many characters question showed up and then answered the confirm windows then this will trigger
+  var rightPrompts = getPrompts(); 
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  if (rightPrompts) {
+  var finalPassword = generatePassword();
+  passwordText.value = finalPassword;
+  }
 
 } 
 
 // Add the generatePassword function
 function generatePassword() {
+  var password = "";
+  for(var i = 0; i < characterLength; i++){
+    // This chooses a random index from the choices variable and makes sure it's a whole number
+    var randomIndex = Math.floor(Math.random() * choices.length)
+    password = password + choices[randomIndex];
 
+  }
+  return password;
 }
 
 // Add function for prompts
@@ -35,7 +46,7 @@ function getPrompts (){
   alert("Make sure you're writing a number between 8 - 128. Try again.");
   return false; 
   }
-  
+// These are the confirm windows that show up with the questions about what you want in your password  
   if(confirm("Do you want lowercase letters in your password?")){
     choices = choices.concat(lowercase);
   }
