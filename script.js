@@ -26,3 +26,15 @@ function writePassword() {
 function generatePassword() {
 
 }
+
+// Add function for prompts
+function getPrompts (){
+  characterLength = parseInt(prompt("How many characters do you want in your password? (8-128 characters)."));
+  // The following function should return false and defines what you cannot use in your password 
+  if(isNan(characterLength) || characterLength < 8 || characterLength > 128) {
+  alert("Make sure you're writing a number between 8 - 128. Try again.");
+  return false; 
+}
+
+
+}
