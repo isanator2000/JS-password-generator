@@ -31,10 +31,23 @@ function generatePassword() {
 function getPrompts (){
   characterLength = parseInt(prompt("How many characters do you want in your password? (8-128 characters)."));
   // The following function should return false and defines what you cannot use in your password 
-  if(isNan(characterLength) || characterLength < 8 || characterLength > 128) {
+  if(isNaN(characterLength) || characterLength < 8 || characterLength > 128) {
   alert("Make sure you're writing a number between 8 - 128. Try again.");
   return false; 
-}
-
+  }
+  
+  if(confirm("Do you want lowercase letters in your password?")){
+    choices = choices.concat(lowercase);
+  }
+  if(confirm("Do you want uppercase letters in your password?")){
+    choices = choices.concat(uppercase);
+  }
+  if(confirm("Do you want special characters in your password?")){
+    choices = choices.concat(specialChar);
+  }
+  if(confirm("Do you want numbers in your password?")){
+    choices = choices.concat(numbers);
+  }
+  return true;
 
 }
