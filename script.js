@@ -15,7 +15,7 @@ generateBtn.addEventListener("click", writePassword);
 
 // Write password to the #password input
 function writePassword() {
-  // if you input a valid number when the how many characters question showed up and then answered the confirm windows then this will trigger
+  // rightPrompts variable is the result of the function getPrompts, so it will only work if you typed a valid number in the characterLength
   var rightPrompts = getPrompts(); 
   var passwordText = document.querySelector("#password");
 
@@ -28,9 +28,10 @@ function writePassword() {
 
 // Add the generatePassword function
 function generatePassword() {
+  // placeholder variable, the value is established below by using the random index numbers
   var password = "";
-  for(var i = 0; i < characterLength; i++){
-    // This chooses a random index from the choices variable and makes sure it's a whole number
+    // This chooses a random index from the choices variable and makes sure it's a whole number, it does this until it get the number of characters you wanted
+    for(var i = 0; i < characterLength; i++){
     var randomIndex = Math.floor(Math.random() * choices.length)
     password = password + choices[randomIndex];
 
@@ -40,13 +41,14 @@ function generatePassword() {
 
 // Add function for prompts
 function getPrompts (){
+  // This asks for user input, typing a number is required
   characterLength = parseInt(prompt("How many characters do you want in your password? (8-128 characters)."));
   // The following function should return false and defines what you cannot use in your password 
   if(isNaN(characterLength) || characterLength < 8 || characterLength > 128) {
   alert("Make sure you're writing a number between 8 - 128. Try again.");
   return false; 
   }
-// These are the confirm windows that show up with the questions about what you want in your password  
+// These are the confirm windows that show up with the questions about what you want in your password, cancel means no 
   if(confirm("Do you want lowercase letters in your password?")){
     choices = choices.concat(lowercase);
   }
