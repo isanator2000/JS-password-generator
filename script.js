@@ -13,32 +13,6 @@ var generateBtn = document.querySelector("#generate");
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-// Write password to the #password input
-function writePassword() {
-  // rightPrompts variable is the result of the function getPrompts, so it will only work if you typed a valid number in the characterLength
-  var rightPrompts = getPrompts(); 
-  var passwordText = document.querySelector("#password");
-
-  if (rightPrompts) {
-  var finalPassword = generatePassword();
-  passwordText.value = finalPassword;
-  }
-
-} 
-
-// Add the generatePassword function
-function generatePassword() {
-  // placeholder variable, the value is established below by using the random index numbers
-  var password = "";
-    // This chooses a random index from the choices variable and makes sure it's a whole number, it does this until it get the number of characters you wanted
-    for(var i = 0; i < characterLength; i++){
-    var randomIndex = Math.floor(Math.random() * choices.length)
-    password = password + choices[randomIndex];
-
-  }
-  return password;
-}
-
 // Add function for prompts
 function getPrompts (){
   // This asks for user input, typing a number is required
@@ -62,5 +36,30 @@ function getPrompts (){
     choices = choices.concat(numbers);
   }
   return true;
-
 }
+
+// Add the generatePassword function
+function generatePassword() {
+  // placeholder variable, the value is established below by using the random index numbers
+  var password = "";
+    // This chooses a random index from the choices variable and makes sure it's a whole number, it does this until it get the number of characters you wanted
+    for(var i = 0; i < characterLength; i++){
+    var randomIndex = Math.floor(Math.random() * choices.length)
+    password = password + choices[randomIndex];
+
+  }
+  return password;
+}
+
+// Write password to the #password input
+function writePassword() {
+  // rightPrompts variable is the result of the function getPrompts, so it will only work if you typed a valid number in the characterLength
+  var rightPrompts = getPrompts(); 
+  var passwordText = document.querySelector("#password");
+
+  if (rightPrompts) {
+  var finalPassword = generatePassword();
+  passwordText.value = finalPassword;
+  }
+
+} 
