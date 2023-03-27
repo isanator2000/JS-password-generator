@@ -11,7 +11,7 @@ To navigate through this webpage, you first click on the Generate Password butto
 
 [Password generator](https://isanator2000.github.io/JS-password-generator/)
 
-![Screenshot showing prompt](images/First prompt asking for user input.png)
+![Screenshot showing prompt](images/First-prompt-asking-for-user-input.png)
 ![Screenshot showing confirm box](images/Confirm lowercase.png)
 ![Screenshot showing confirm box](images/Confirm uppercase.png)
 ![Screenshot showing confirm box](images/Confirm special characters.png)
