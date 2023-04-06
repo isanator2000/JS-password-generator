@@ -15,6 +15,8 @@ generateBtn.addEventListener("click", writePassword);
 
 // Add function for prompts
 function getPrompts (){
+// clear the choices array before adding new characters
+  choices = [];
   // This asks for user input, typing a number is required
   characterLength = parseInt(prompt("How many characters do you want in your password? (8-128 characters)."));
   // The following function should return false and defines what you cannot use in your password 
