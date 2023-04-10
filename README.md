@@ -11,12 +11,12 @@ To navigate through this webpage, you first click on the Generate Password butto
 
 [Password generator](https://isanator2000.github.io/JS-password-generator/)
 
-[Screenshot showing prompt](./images/Firstprompt.png)
-[Screenshot showing confirm box](./images/Confirmlowercase.png)
-[Screenshot showing confirm box](./images/Confirmuppercase.png)
-[Screenshot showing confirm box](./images/Confirmspecialcharacters.png)
-[Screenshot showing confirm box](./images/Confirmnumbers.png)
-[Screenshot showing final password](./images/Passwordresult.png)
+[Screenshot showing prompt](./assets/images/Firstprompt.png)
+[Screenshot showing confirm box](./assets/images/Confirmlowercase.png)
+[Screenshot showing confirm box](./assets/images/Confirmuppercase.png)
+[Screenshot showing confirm box](./assets/images/Confirmspecialcharacters.png)
+[Screenshot showing confirm box](./assets/images/Confirmnumbers.png)
+[Screenshot showing final password](./assets/images/Passwordresult.png)
 
 
 ## Notes
